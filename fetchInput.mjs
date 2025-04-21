@@ -1,9 +1,9 @@
-import "dotenv/config";
+import "jsr:@std/dotenv/load";
 
-const SESSION = process.env.SESSION_TOKEN;
+const SESSION = Deno.env.SESSION_TOKEN;
 if (!SESSION) {
 	console.error("❌ SESSION_TOKEN not set in .env");
-	process.exit(1);
+	Deno.exit(1);
 }
 
 export async function getInput(year, day) {
