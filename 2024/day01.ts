@@ -3,9 +3,9 @@ import { getInput } from "../fetchInput.mjs";
 const input = await getInput(2024, 1);
 
 // Split lines into left and right arrays
-function splitLeftRight() {
-	const left = [];
-	const right = [];
+function splitLeftRight(): { left: number[]; right: number[] } {
+	const left: number[] = [];
+	const right: number[] = [];
 	input
 		.split("\n")
 		.map((line) => line.trim())
@@ -22,7 +22,7 @@ function splitLeftRight() {
 	return { left, right };
 }
 
-function part1(left, right) {
+function part1(left: number[], right: number[]): number {
 	let sum = 0;
 	for (let i = 0; i < left.length; i++) {
 		sum += Math.abs(left[i] - right[i]);
@@ -31,7 +31,7 @@ function part1(left, right) {
 	return sum;
 }
 
-function part2(left, right) {
+function part2(left: number[], right: number[]): number {
 	let j = 0;
 	let sum = 0;
 
