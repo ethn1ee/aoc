@@ -6,7 +6,7 @@ if (!SESSION) {
 	Deno.exit(1);
 }
 
-export async function getInput(year, day) {
+export async function getInput(year: number, day: number): Promise<string> {
 	const url = `https://adventofcode.com/${year}/day/${day}/input`;
 	const res = await fetch(url, {
 		headers: { Cookie: `session=${SESSION}` },

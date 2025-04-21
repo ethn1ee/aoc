@@ -1,4 +1,4 @@
-import { getInput } from "../fetchInput.mjs";
+import { getInput } from "../fetchInput.mts";
 
 const input = await getInput(2024, 2);
 
