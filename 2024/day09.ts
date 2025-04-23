@@ -1,7 +1,6 @@
 import { getInput } from "../fetchInput.mts";
 
 const input = await getInput(2024, 9);
-// `2333133121414131402`;
 
 function parseInput(): number[] {
 	return input.split("").map(Number);
