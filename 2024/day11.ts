@@ -71,4 +71,4 @@ function memoization(stones: string[], blink: number): number {
 }
 
 const stones = parseInput();
-console.log(memoization(stones, 75));
+console.log(memoization(stones, 25));
