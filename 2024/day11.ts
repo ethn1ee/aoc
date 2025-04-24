@@ -27,7 +27,6 @@ function bruteforce(stones: string[], blink: number): number {
 }
 
 function memoization(stones: string[], blink: number): number {
-	const start = Date.now();
 	const memos = Array.from({ length: blink + 1 }).map(
 		() => new Map<string, number>()
 	);
@@ -64,8 +63,6 @@ function memoization(stones: string[], blink: number): number {
 
 	let count = 0;
 	stones.forEach((stone) => (count += transform(stone, blink)));
-
-	// console.log(Date.now() - start + "ms");
 
 	return count;
 }
