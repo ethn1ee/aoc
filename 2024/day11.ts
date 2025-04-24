@@ -65,7 +65,7 @@ function memoization(stones: string[], blink: number): number {
 	let count = 0;
 	stones.forEach((stone) => (count += transform(stone, blink)));
 
-	console.log(Date.now() - start);
+	console.log(Date.now() - start + "ms");
 
 	return count;
 }
