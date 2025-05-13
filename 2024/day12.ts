@@ -1,16 +1,6 @@
 import { getInput } from "../fetchInput.mts";
 
 const input = await getInput(2024, 12);
-// 	`RRRRIICCFF
-// RRRRIICCCF
-// VVRRRCCFFF
-// VVRCCCJFFF
-// VVVVCJJCFE
-// VVIVCCJJEE
-// VVIIICJJEE
-// MIIIIIJJEE
-// MIIISIJEEE
-// MMMISSJEEE`;
 
 function parseInput() {
 	const matrix = input.split("\n").map((line) => line.split(""));
