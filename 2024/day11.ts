@@ -6,7 +6,7 @@ function parseInput(): string[] {
 	return input.split(" ");
 }
 
-function bruteforce(stones: string[], blink: number): number {
+function _bruteforce(stones: string[], blink: number): number {
 	function transform(stone: string): string[] {
 		if (stone === "0") return ["1"];
 		if (stone.length % 2 === 0) {
