@@ -1,0 +1,12 @@
+version: 3
+
+dotenv:
+  - ../.env
+
+tasks:
+  run:*:
+    vars:
+      DAY: "{{index .MATCH 0}}"
+    cmds:
+      - go run . {{.DAY}}
+    silent: true
