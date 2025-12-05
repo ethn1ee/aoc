@@ -42,11 +42,26 @@ func main() {
 		log.Fatalf("function %s not found", fnName)
 	}
 
+	// check arguments
 	if fn.Type().NumIn() != 1 {
-		log.Fatalf("funtion %s must have 1 argument, but it has %d", fnName, fn.Type().NumIn())
+		log.Fatalf("invalid number of arguments: expected 1 argument, got %d", fnName, fn.Type().NumIn())
 	}
 
-	fn.Call([]reflect.Value{reflect.ValueOf(input)})
+	// check return values
+	if !fn.Type().Out(0).Implements(reflect.TypeOf((*error)(nil)).Elem()) {
+		log.Fatalf("invalid return type: method %s does not return an error", fnName)
+	}
+
+	res := fn.Call([]reflect.Value{reflect.ValueOf(input)})
+	if len(res) != 1 {
+		log.Fatalf("invalid number of return values: expected 1 value, got %d", len(res))
+	}
+
+	fnErr := res[0]
+
+	if !fnErr.IsNil() {
+		log.Fatalf("error: %v", fnErr)
+	}
 }
 
 func getInput(day int) (string, error) {
