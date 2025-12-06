@@ -1,12 +1,12 @@
 version: 3
 
 dotenv:
-  - ../.env
+  - .env
 
 tasks:
-  run:*:
+  2025:*:
     vars:
       DAY: "{{index .MATCH 0}}"
     cmds:
-      - go run . {{.DAY}}
+      - cd ./2025 && go run . {{.DAY}}
     silent: true

@@ -1,5 +1,3 @@
-import "jsr:@std/dotenv/load";
-
 const SESSION = Deno.env.get("SESSION_TOKEN");
 if (!SESSION) {
 	console.error("❌ SESSION_TOKEN not set in .env");

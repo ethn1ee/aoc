@@ -1,4 +1,4 @@
-import { getInput } from "../fetchInput.mts";
+import { getInput } from "./get-input";
 import process from "node:process";
 
 const input = await getInput(2024, 14);
