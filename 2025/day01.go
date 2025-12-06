@@ -42,20 +42,14 @@ func (s solution) Day01(input string) error {
 				curr = 100
 			}
 			temp := curr - dist
-			for {
-				if temp > 0 {
-					break
-				}
+			for temp <= 0 {
 				temp += 100
 				count++
 			}
 			curr = temp
 		case 'R':
 			temp := curr + dist
-			for {
-				if temp < 100 {
-					break
-				}
+			for temp >= 100 {
 				temp -= 100
 				count++
 			}
