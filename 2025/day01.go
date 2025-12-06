@@ -6,21 +6,21 @@ import (
 	"strings"
 )
 
-const testInput = `
-L68
-L30
-R48
-L5
-R60
-L55
-L1
-L99
-R14
-L82
-`
+// const test = `
+// L68
+// L30
+// R48
+// L5
+// R60
+// L55
+// L1
+// L99
+// R14
+// L82
+// `
 
 func (s solution) Day01(input string) error {
-	// input = testInput
+	// input = test
 	count := 0
 	lines := strings.SplitSeq(input, "\n")
 	curr := 50

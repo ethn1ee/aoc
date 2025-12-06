@@ -9,6 +9,7 @@ import (
 	"os"
 	"reflect"
 	"strconv"
+	"strings"
 )
 
 const year = 2025
@@ -92,5 +93,7 @@ func getInput(day int) (string, error) {
 		return "", fmt.Errorf("failed to read body: %w", err)
 	}
 
-	return string(body), nil
+	input := strings.TrimSpace(string(body))
+
+	return input, nil
 }
