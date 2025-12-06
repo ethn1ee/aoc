@@ -1,6 +1,6 @@
 const SESSION = Deno.env.get("SESSION_TOKEN");
 if (!SESSION) {
-	console.error("❌ SESSION_TOKEN not set in .env");
+	console.error("environment variable SESSION_TOKEN is required");
 	Deno.exit(1);
 }
 

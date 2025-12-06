@@ -10,3 +10,10 @@ tasks:
     cmds:
       - cd ./2025 && go run . {{.DAY}}
     silent: true
+
+  2024:*:
+    vars:
+      DAY: "{{index .MATCH 0}}"
+    cmds:
+      - cd ./2024 && deno run --unstable-sloppy-imports -A day{{.DAY}}.ts
+    silent: true
